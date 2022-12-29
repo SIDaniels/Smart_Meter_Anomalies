@@ -1,4 +1,4 @@
-# Smart_Meter_Anomalies
+# Smart Meter Anomaly Detection
 ## Background
 The built environment will require major energy reforms in order to reach net zero targets by 2050 and the Paris Agreement climate goal of a global warming threshold at 1.5C. Currently, building operations are powered by non-renewable energy sources, namely fossil fuels, which contribute 28% of all greenhouse gas emissions. On average,  [30% of energy](https://www.energy.gov/eere/buildings/about-commercial-buildings-integration-program) consumed by buildings is wasted, which provides a wide window for improvement in energy efficiency. While this is in large part due to inefficiencies in heating/cooling, lighting, ventilation, and the building envelope ([ref](https://www.energy.gov/sites/prod/files/2017/03/f34/qtr-2015-chapter5.pdf)) , including smart sensor technology for real-time feedback on aberrant energy use is also a critical factor to reducing waste. As countries inch towards decarbonizing the energy supply to the grid, greater energy efficiency will also help reduce the overall load. [The World Economic Forum reports](https://www.weforum.org/agenda/2021/09/how-to-build-zero-carbon-buildings/) that two dollars of energy supply are saved for every dollar invested in energy saving measures and minimizes the costs to reach growing energy demands. Digitalization of metering, sensors, and controls can provide the necessary feedback loops for remote management of buildings’ energy use. “Smart” metering is one component of advanced metering infrastructure (AMI), which also includes communications networks and data management systems that enables two-way communication between the utility and its customers- thereby creating a new layer of improving energy efficiency for overall emissions reductions. Smart metering has become ubiquitous over the past several years, as a crucial component of the energy transition. By 2020, over 100 million smart meters were installed nationwide, which is over 65% of the market. Even though energy utilities now have greater access to this near real-time data, there are only [a few utilities](https://www.aceee.org/blog-post/2020/01/smart-meters-gain-popularity-most-utilities-dont-optimize-their-potential-save) that are using it for optimization. 
 The task is to build an anomaly detection model using data obtained initially from American Society of Heating, Refrigerating and Air-Conditioning Engineers (ASHRAE). With near real-time detection of anomalous measurements, a  utility can oversee any unusual activity that may be an early indicator of malfunctions, outages, leaks or other hazards to energy efficiency. Ultimately, the utilities could even build in energy-use notifications to building managers for added benefits of immediate building safety and cost-savings. 
@@ -19,17 +19,18 @@ K-nearest neighbors (KNN) and logistic regression were initially used for baseli
 The training dataset included 1399843 entries of sensor meter readings while the test set contained 349651 entries (~25%). Scores reported below were calculated with 5-fold cross validation on the training portion only. Predictions on the test (holdout) set were used as a final determination of F1-score. The top 5 features of importance in obtaining the most optimal metrics includes the meter readings (in energy consumption in kWh), daily standard deviation of the meter readings, the square footage of the building, the month of the year (using the cyclical sin/cos features), and a stacked feature (meter reading per weather monitoring instrument site ID).
 
 #### Random forest 5-fold CV scores: 
-40 features (including dummy variables for primary building use)
-Accuracy: 0.99. 
+40 features (including dummy variables for primary building use)  
+Training Results:  
+Accuracy: 0.99  
+F1: 0.66  
+Precision: 0.87  
+Recall: 0.54  
 
-F1: 0.66
-Precision: 0.87
-Recall: 0.54
-Test Results:
-Accuracy: 0.99
-F1: 0.80
-Precision: 0.93
-Recall: 0.70
+Test Results:  
+Accuracy: 0.99  
+F1: 0.80  
+Precision: 0.93  
+Recall: 0.70  
 ## Tools
 - Numpy and Pandas - data manipulation
 - Scikit-learn classification models
