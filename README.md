@@ -30,7 +30,13 @@ Test Results:
 Accuracy: 0.99  
 F1: 0.80  
 Precision: 0.93  
-Recall: 0.70  
+Recall: 0.70
+
+## Conclusion
+- Random Forest performs best in balancing precision/recall (F1 score)
+- Anomaly class is predicted correctly 93% of the time  
+- Features of greatest influence include variations of meter readings, building attribute, and time (month)
+
 ## Tools
 - Numpy and Pandas - data manipulation
 - Scikit-learn classification models
